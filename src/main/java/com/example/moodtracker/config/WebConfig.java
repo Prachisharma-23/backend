@@ -14,7 +14,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://mood-tracker-prachi-sharmas-projects-48fa5fdc.vercel.app/") // React app URL
+                        .allowedOrigins("https://mood-tracker-prachi-sharmas-projects-48fa5fdc.vercel.app") // React app URL
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*");
             }
