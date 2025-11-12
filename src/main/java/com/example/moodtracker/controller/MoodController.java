@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.moodtracker.entity.Mood;
 import com.example.moodtracker.repository.MoodRepository;
 
-@CrossOrigin(origins = "https://mood-tracker-psi-ecru.vercel.app/") // ✅ allows frontend requests
+@CrossOrigin(origins = "https://mood-tracker-psi-ecru.vercel.app") // ✅ allows frontend requests
 @RestController
 @RequestMapping("/api/moods")
 public class MoodController {
