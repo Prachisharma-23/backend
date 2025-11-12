@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.moodtracker.entity.Mood;
 import com.example.moodtracker.repository.MoodRepository;
-
-@CrossOrigin(origins = "https://mood-tracker-prachi-sharmas-projects-48fa5fdc.vercel.app") // ✅ allows frontend requests
 @RestController
 @RequestMapping("/api/moods")
+@CrossOrigin(origins = {"https://mood-tracker-prachi-sharmas-projects-48fa5fdc.vercel.app","http://localhost:3000"}) // ✅ allows frontend requests
+
 public class MoodController {
 
     @Autowired
@@ -26,10 +26,12 @@ public class MoodController {
         return moodRepository.findAll();
     }
 
-    @SuppressWarnings("null")
     @PostMapping
     public Mood addMood(@RequestBody Mood mood) {
+        System.out.println("🟢 Received mood: " + mood.getMood() + " - " + mood.getNote());
         return moodRepository.save(mood);
     }
+
+  
 }
 
